@@ -16,7 +16,7 @@ predicate isTestFunction(Function f) {
 
 predicate callsPressActionKey(Function f) {
   exists(CallExpr call |
-    call.getTarget().getName() = "pressActionKey" and
+    call.getCallee().getQualifiedName() = "pressActionKey" and
     call = f.getAChild()
   )
 }
